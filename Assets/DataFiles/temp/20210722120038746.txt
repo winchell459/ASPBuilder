@@ -1,0 +1,59 @@
+
+            #const max_width = 10.
+            #const max_depth = 10.
+            #const step_count = 10.
+
+            width(1..max_width).
+            depth(1..max_depth).
+            height(1..step_count).
+
+            block_types(grass;water;sand).
+
+            1{block(XX,YY,ZZ,TYPE): height(YY), block_types(TYPE)}1 :- width(XX), depth(ZZ).
+            start(1,1).
+
+            %path(XX,ZZ) :- start(XX,ZZ).
+
+            %path(XX,ZZ) :- path(XX - 1, ZZ), block(XX,YY,ZZ), block(XX - 1, Y2, ZZ), YY <= Y2+1, YY >= Y2-1.
+            %path(XX,ZZ) :- path(XX + 1, ZZ), block(XX,YY,ZZ), block(XX + 1, Y2, ZZ), YY <= Y2+1, YY >= Y2-1.
+            %path(XX,ZZ) :- path(XX, ZZ-1), block(XX,YY,ZZ), block(XX, Y2, ZZ-1), YY <= Y2+1, YY >= Y2-1.
+            %path(XX,ZZ) :- path(XX, ZZ+1), block(XX,YY,ZZ), block(XX, Y2, ZZ+1), YY <= Y2+1, YY >= Y2-1.
+            
+            %:- block(XX,_,ZZ), not path(XX,ZZ).
+
+            :- block(XX,Y1,ZZ,_), block(XX-1,Y2,ZZ,_), Y1 < Y2-1.
+            :- block(XX,Y1,ZZ,_), block(XX-1,Y2,ZZ,_), Y1 > Y2+1.
+
+            :- block(XX,Y1,ZZ,_), block(XX+1,Y2,ZZ,_), Y1 < Y2-1.
+            :- block(XX,Y1,ZZ,_), block(XX+1,Y2,ZZ,_), Y1 > Y2+1.
+
+            :- block(XX,Y1,ZZ,_), block(XX,Y2,ZZ-1,_), Y1 < Y2-1.
+            :- block(XX,Y1,ZZ,_), block(XX,Y2,ZZ-1,_), Y1 > Y2+1.
+
+            :- block(XX,Y1,ZZ,_), block(XX,Y2,ZZ+1,_), Y1 < Y2-1.
+            :- block(XX,Y1,ZZ,_), block(XX,Y2,ZZ+1,_), Y1 > Y2+1.
+
+            :- {block(_,YY,_,_): YY == 1} < 1.
+            :- {block(_,YY,_,_): YY == step_count} < 1.
+
+
+            %neghboring waters must have same height
+            :- block(XX,Y1,ZZ,water), block(XX-1,Y2,ZZ,water), not Y1 == Y2.
+            :- block(XX,Y1,ZZ,water), block(XX-1,Y2,ZZ,water), not Y1 == Y2.
+
+            :- block(XX,Y1,ZZ,water), block(XX+1,Y2,ZZ,water), not Y1 == Y2.
+            :- block(XX,Y1,ZZ,water), block(XX+1,Y2,ZZ,water), not Y1 == Y2.
+
+            :- block(XX,Y1,ZZ,water), block(XX,Y2,ZZ-1,water), not Y1 == Y2.
+            :- block(XX,Y1,ZZ,water), block(XX,Y2,ZZ-1,water), not Y1 == Y2.
+
+            :- block(XX,Y1,ZZ,water), block(XX,Y2,ZZ+1,water), not Y1 == Y2.
+            :- block(XX,Y1,ZZ,water), block(XX,Y2,ZZ+1,water), not Y1 == Y2.
+  
+            %#show path/2.
+            #show block/4.
+            
+
+
+
+            

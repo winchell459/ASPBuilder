@@ -1,0 +1,29 @@
+
+            #const max_width = 10.
+            #const max_depth = 10.
+            #const step_count = 10.
+
+            width(1..max_width).
+            depth(1..max_depth).
+            height(1..step_count).
+
+            1{block(XX,YY,ZZ): height(YY)}1 :- width(XX), depth(ZZ).
+            start(1,1).
+            %path(XX,ZZ) :- start(XX,ZZ).
+
+            %path(XX,ZZ) :- path(XX - 1, ZZ), block(XX,YY,ZZ), block(XX - 1, Y2, ZZ), YY <= Y2+1, YY >= Y2-1.
+            %path(XX,ZZ) :- path(XX + 1, ZZ), block(XX,YY,ZZ), block(XX + 1, Y2, ZZ), YY <= Y2+1, YY >= Y2-1.
+            %path(XX,ZZ) :- path(XX, ZZ-1), block(XX,YY,ZZ), block(XX, Y2, ZZ-1), YY <= Y2+1, YY >= Y2-1.
+            %path(XX,ZZ) :- path(XX, ZZ+1), block(XX,YY,ZZ), block(XX, Y2, ZZ+1), YY <= Y2+1, YY >= Y2-1.
+            
+            %:- block(XX,_,ZZ), not path(XX,ZZ).
+
+           
+  
+            %#show path/2.
+            #show block/3.
+            
+
+
+
+            
