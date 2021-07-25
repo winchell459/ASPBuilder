@@ -123,6 +123,93 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &46530003
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 46530005}
+  - component: {fileID: 46530004}
+  m_Layer: 0
+  m_Name: BuildTerrain
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &46530004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46530003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d066ed64decc5fc4ca63c720e5164840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parameters: []
+  Status: 0
+  SolveTime: 0
+  width: 40
+  depth: 40
+  height: 3
+  cpus: 8
+  waterPercent: 30
+  grassPercent: 30
+  GrassPrefab: {fileID: 2581007871891410607, guid: f37b21791a5f54689b02e6e612934bdf, type: 3}
+  WaterPrefab: {fileID: 2581007871891410607, guid: eb4faa8f4c76345da890e7b0b481e37a, type: 3}
+  SandPrefab: {fileID: 2581007871891410607, guid: d553e2b2574804095a42347c2ac3a654, type: 3}
+  builds:
+  - {fileID: 244181784}
+--- !u!4 &46530005
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46530003}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 78.79951, y: -24.51542, z: 59.00618}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &244181783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 244181784}
+  m_Layer: 0
+  m_Name: Build 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &244181784
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244181783}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &475862943
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -203,6 +290,261 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a099bab5c874424087a23890eae1a8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &516491316
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 516491318}
+  - component: {fileID: 516491317}
+  m_Layer: 0
+  m_Name: BuildElevation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &516491317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516491316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5c00ce0c11e5f84db1ace6cbd5d81e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parameters: []
+  Status: 0
+  SolveTime: 0
+  height: 15
+  cpus: 8
+  GrassPrefab: {fileID: 2581007871891410607, guid: f37b21791a5f54689b02e6e612934bdf, type: 3}
+  WaterPrefab: {fileID: 2581007871891410607, guid: eb4faa8f4c76345da890e7b0b481e37a, type: 3}
+  SandPrefab: {fileID: 2581007871891410607, guid: d553e2b2574804095a42347c2ac3a654, type: 3}
+  builds:
+  - {fileID: 1343703540}
+--- !u!4 &516491318
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516491316}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 22.44571, y: -19.213919, z: 42.023445}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &550558020
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 550558022}
+  - component: {fileID: 550558021}
+  m_Layer: 0
+  m_Name: BuildVegetation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &550558021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550558020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b1eed0bc872a294681fa5a02e526e2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parameters: []
+  Status: 0
+  SolveTime: 0
+  width: 40
+  depth: 40
+  height: 10
+  cpus: 8
+  waterPercent: 30
+  grassPercent: 30
+  GrassPrefab: {fileID: 2581007871891410607, guid: f37b21791a5f54689b02e6e612934bdf, type: 3}
+  WaterPrefab: {fileID: 2581007871891410607, guid: eb4faa8f4c76345da890e7b0b481e37a, type: 3}
+  SandPrefab: {fileID: 2581007871891410607, guid: d553e2b2574804095a42347c2ac3a654, type: 3}
+  builds:
+  - {fileID: 819141504}
+--- !u!4 &550558022
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550558020}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 22.44571, y: -19.213919, z: 42.023445}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &819141503
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 819141504}
+  m_Layer: 0
+  m_Name: Build 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &819141504
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819141503}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 41}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1020792219
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1020792221}
+  - component: {fileID: 1020792220}
+  m_Layer: 0
+  m_Name: BuildTerrain (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1020792220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020792219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d066ed64decc5fc4ca63c720e5164840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parameters:
+  - {fileID: 1799104861}
+  Status: 0
+  SolveTime: 0
+  width: 40
+  depth: 40
+  height: 3
+  cpus: 8
+  waterPercent: 30
+  grassPercent: 30
+  GrassPrefab: {fileID: 2581007871891410607, guid: f37b21791a5f54689b02e6e612934bdf, type: 3}
+  WaterPrefab: {fileID: 2581007871891410607, guid: eb4faa8f4c76345da890e7b0b481e37a, type: 3}
+  SandPrefab: {fileID: 2581007871891410607, guid: d553e2b2574804095a42347c2ac3a654, type: 3}
+  builds:
+  - {fileID: 2043221793}
+--- !u!4 &1020792221
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020792219}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 78.79951, y: -24.51542, z: 59.00618}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1150741048
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1150741050}
+  - component: {fileID: 1150741049}
+  m_Layer: 0
+  m_Name: BuildVegetation (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1150741049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150741048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b1eed0bc872a294681fa5a02e526e2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parameters: []
+  Status: 0
+  SolveTime: 0
+  width: 40
+  depth: 40
+  height: 10
+  cpus: 8
+  waterPercent: 30
+  grassPercent: 30
+  GrassPrefab: {fileID: 2581007871891410607, guid: f37b21791a5f54689b02e6e612934bdf, type: 3}
+  WaterPrefab: {fileID: 2581007871891410607, guid: eb4faa8f4c76345da890e7b0b481e37a, type: 3}
+  SandPrefab: {fileID: 2581007871891410607, guid: d553e2b2574804095a42347c2ac3a654, type: 3}
+  builds:
+  - {fileID: 244181784}
+--- !u!4 &1150741050
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150741048}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 22.44571, y: -19.213919, z: 42.023445}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1308429042
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,6 +627,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1343703539
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1343703540}
+  m_Layer: 0
+  m_Name: Build 4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1343703540
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343703539}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 41, y: 0, z: 41}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1406243112
 GameObject:
@@ -378,6 +750,133 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1419796004
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1419796006}
+  - component: {fileID: 1419796005}
+  m_Layer: 0
+  m_Name: BuildElevation (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1419796005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419796004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5c00ce0c11e5f84db1ace6cbd5d81e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parameters: []
+  Status: 0
+  SolveTime: 0
+  height: 15
+  cpus: 8
+  GrassPrefab: {fileID: 2581007871891410607, guid: f37b21791a5f54689b02e6e612934bdf, type: 3}
+  WaterPrefab: {fileID: 2581007871891410607, guid: eb4faa8f4c76345da890e7b0b481e37a, type: 3}
+  SandPrefab: {fileID: 2581007871891410607, guid: d553e2b2574804095a42347c2ac3a654, type: 3}
+  builds:
+  - {fileID: 2043221793}
+--- !u!4 &1419796006
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419796004}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 22.44571, y: -19.213919, z: 42.023445}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1799104860
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1799104862}
+  - component: {fileID: 1799104861}
+  m_Layer: 0
+  m_Name: BuildParameterNeighbors
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1799104861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799104860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 788f770c0b7cc76479656b121d60c471, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Neighbor: {fileID: 46530004}
+--- !u!4 &1799104862
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799104860}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.145181, y: -220.43062, z: 405.13892}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2043221792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2043221793}
+  m_Layer: 0
+  m_Name: Build 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2043221793
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043221792}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 41, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2093041023
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,13 +907,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clingoSolver: {fileID: 475862944}
-  width: 20
-  depth: 20
-  height: 10
-  cpus: 7
-  BlockPrefab: {fileID: 2581007871891410607, guid: f37b21791a5f54689b02e6e612934bdf, type: 3}
-  WaterPrefab: {fileID: 2581007871891410607, guid: eb4faa8f4c76345da890e7b0b481e37a, type: 3}
-  SandPrefab: {fileID: 2581007871891410607, guid: d553e2b2574804095a42347c2ac3a654, type: 3}
+  runs:
+  - {fileID: 46530004}
+  - {fileID: 1020792220}
+  - {fileID: 550558021}
+  - {fileID: 516491317}
 --- !u!4 &2093041025
 Transform:
   m_ObjectHideFlags: 0
