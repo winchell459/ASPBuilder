@@ -1,56 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using ASPBuilder;
 
-//[CreateAssetMenu(fileName = "ASPRun", menuName = "ScriptableObjects/ASPBuilder/new Terrain Build", order = 1)]
-public class BuildTerrain : BuildTerrainASPRun
-{
-    public double SolveTime;
-    public int width = 10, depth = 10, height = 10, cpus = 1, waterPercent = 30, grassPercent = 30;
-    //public GameObject GrassPrefab, WaterPrefab, SandPrefab;
-    public Transform[] builds;
-
-    //public override void Run()
-    //{
-    //    string code = GetASPCode();
-    //    string parameters = GetASPParameters();
-    //    FindObjectOfType<Builder>().ClingoSolve(code, parameters);
-    //}
-    public override string GetASPCode()
-    {
-        return terrain;
-    }
-    public override string GetASPAdditionalParameters()
-    {
-        return $" -c max_width={width} -c max_depth={depth} -c step_count={height} -c water_percent={waterPercent} -c grass_percent={grassPercent} --parallel-mode {cpus}";
-    }
-    public override ASPRunAction SATISFIABLE(Dictionary<string, List<List<string>>> solution, double runtime)
-    {
-        SolveTime = runtime;
-        PlaceTerrain(solution, builds[0], "block");
-        Status = ASPRunStatus.finished;
-        return ASPRunAction.dequeue;
-    }
-    public override ASPRunAction UNSATISFIABLE()
-    {
-        Status = ASPRunStatus.finished;
-        return ASPRunAction.hold;
-    }
-    public override ASPRunAction TIMEOUT()
-    {
-        throw new System.NotImplementedException();
-    }
-    public override ASPRunAction ERROR()
-    {
-        throw new System.NotImplementedException();
-    }
-
-
-    
-    
-
-    string terrain = @"
             #const max_width = 10.
             #const max_depth = 10.
             #const step_count = 10.
@@ -174,10 +122,44 @@ public class BuildTerrain : BuildTerrainASPRun
             :- {block(_,_,_,grass)} == 0.
             :- {block(_,_,_,water)} == 0.
 
-            ";
-
-
-    
-
-
-}
+            
+ block(0,2,1, grass).
+ block(0,2,2, grass).
+ block(0,3,3, grass).
+ block(0,3,4, grass).
+ block(0,1,15, grass).
+ block(0,1,16, grass).
+ block(0,2,17, grass).
+ block(0,2,18, grass).
+ block(0,2,19, grass).
+ block(0,2,20, grass).
+ block(0,1,21, grass).
+ block(0,2,27, grass).
+ block(0,2,28, grass).
+ block(0,2,29, grass).
+ block(0,1,30, grass).
+ block(0,2,39, grass).
+ block(0,1,40, grass).
+ block(0,3,5, sand).
+ block(0,3,12, sand).
+ block(0,2,13, sand).
+ block(0,2,14, sand).
+ block(0,2,22, sand).
+ block(0,2,23, sand).
+ block(0,2,24, sand).
+ block(0,3,25, sand).
+ block(0,2,26, sand).
+ block(0,2,31, sand).
+ block(0,2,32, sand).
+ block(0,2,33, sand).
+ block(0,2,37, sand).
+ block(0,2,38, sand).
+ block(0,2,6, water).
+ block(0,2,7, water).
+ block(0,2,8, water).
+ block(0,2,9, water).
+ block(0,2,10, water).
+ block(0,2,11, water).
+ block(0,1,34, water).
+ block(0,1,35, water).
+ block(0,1,36, water).

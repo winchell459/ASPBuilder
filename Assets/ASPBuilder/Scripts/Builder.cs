@@ -35,8 +35,9 @@ namespace ASPBuilder
             {
                 if (clingoSolver.SolverStatus == ClingoSolver.Status.SATISFIABLE)
                 {
-                    
-                    if (runsQueue[0].SATISFIABLE(clingoSolver.answerSet, clingoSolver.Duration) == ASPRun.ASPRunAction.requeue)
+                    Dictionary<string, List<List<string>>> solution = new Dictionary<string, List<List<string>>>(clingoSolver.answerSet);
+                    runsQueue[0].solution = solution;
+                    if (runsQueue[0].SATISFIABLE(solution, clingoSolver.Duration) == ASPRun.ASPRunAction.requeue)
                     {
                         StartRun();
                     }

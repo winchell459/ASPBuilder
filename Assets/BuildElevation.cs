@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using ASPBuilder;
 
-public class BuildElevation : ASPRun
+public class BuildElevation : BuildTerrainASPRun
 {
     public double SolveTime;
 
     public int height = 10, cpus = 1;
-    public GameObject GrassPrefab, WaterPrefab, SandPrefab;
+    
     public Transform[] builds;
+    public ASPRun SolutionSource;
 
     //public override void Run()
     //{
@@ -19,7 +20,7 @@ public class BuildElevation : ASPRun
     //}
     public override string GetASPCode()
     {
-        string input = Utility.CopyPredicates(FindObjectOfType<Clingo.ClingoSolver>().answerSet, "block", "block2D");
+        string input = Utility.CopyPredicates(SolutionSource.solution, "block", "block2D");
         return elevation + input;
     }
     public override string GetASPAdditionalParameters()
@@ -57,8 +58,8 @@ public class BuildElevation : ASPRun
 
             height(1..max_height).
 
-            1{block(XX,YY,ZZ,Type): height(YY)}1 :- block2D(XX,_,ZZ,Type).
-            1{block(XX,YY,ZZ,Type): height(YY)}1 :- block2D(XX,ZZ,Type).
+            1{block(XX,YY,ZZ,Type): height(YY)}1 :- block2D(XX,_,ZZ,Type), XX > 0.
+            1{block(XX,YY,ZZ,Type): height(YY)}1 :- block2D(XX,ZZ,Type), XX > 0.
 
             :- block(XX,Y1,ZZ,_), block(XX-1,Y2,ZZ,_), Y1 < Y2-1.
             :- block(XX,Y1,ZZ,_), block(XX-1,Y2,ZZ,_), Y1 > Y2+1.
@@ -103,34 +104,5 @@ public class BuildElevation : ASPRun
             
             ";
 
-    void PlaceTerrain(Dictionary<string, List<List<string>>> solution, Transform buildLocation, string key)
-    {
-        foreach (List<string> block in solution[key])
-        {
-            int x = 0;
-            float y = 0;
-            int z = 0;
-            string type = "grass";
-            GameObject prefab = GrassPrefab;
-            if (block.Count == 3)
-            {
-                x = int.Parse(block[0]);
-                z = int.Parse(block[1]);
-                type = block[2];
-            }
-            else if (block.Count == 4)
-            {
-                x = int.Parse(block[0]);
-                z = int.Parse(block[2]);
-                y = int.Parse(block[1]);
-                type = block[3];
-            }
-
-
-            if (type == "water") prefab = WaterPrefab;
-            else if (type == "sand") prefab = SandPrefab;
-            GameObject blockObj = Instantiate(prefab, buildLocation);
-            blockObj.transform.localPosition = new Vector3(x, y / 10, z);
-        }
-    }
+    
 }

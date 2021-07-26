@@ -42,12 +42,14 @@ namespace ASPBuilder
             foreach(List<string> values in solution[predicate])
             {
                 string parameters = "";
-                for(int i = 0; i < values.Count; i += 1)
+                for (int i = 0; i < values.Count; i += 1)
                 {
                     if (i > 0) parameters += ",";
                     parameters += $"{values[i]}";
                 }
                 aspCode += $"{newPredicate}({parameters}).\n";
+                
+                
             }
 
             return aspCode;

@@ -24,8 +24,25 @@ namespace ASPBuilder
         public abstract ASPRunAction UNSATISFIABLE();
         public abstract ASPRunAction TIMEOUT();
         public abstract ASPRunAction ERROR();
-        public Dictionary<string, List<List<string>>> solution;
+        public Dictionary<string, List<List<string>>> solution {
+            get {
+                return solutions.Count > 0 ? solutions[solutions.Count - 1] : null;
+            }
+            set
+            {
+                //Dictionary<string, List<List<string>>> copy = new Dictionary<string, List<List<string>>>(value);
+                //solutions.Add(copy);
+                solutions.Add(value);
+            }
+        }
+        private List<Dictionary<string, List<List<string>>>> solutions = new List<Dictionary<string, List<List<string>>>>();
 
+        public Dictionary<string, List<List<string>>> GetSolution(int index)
+        {
+            return solutions[index];
+        }
+
+        //public ASPRunAction SATISFIABLE
 
         public enum ASPRunStatus
         {
