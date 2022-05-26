@@ -123,3 +123,13 @@
             :- {block(_,_,_,water)} == 0.
 
             
+ block(0,8,1, grass).
+ block(0,7,2, grass).
+ block(0,7,3, grass).
+ block(0,6,4, grass).
+ block(0,5,5, grass).
+ block(0,4,6, sand).
+ block(0,4,7, sand).
+ block(0,4,8, sand).
+ block(0,3,9, water).
+ block(0,3,10, water).
